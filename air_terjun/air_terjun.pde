@@ -1,5 +1,8 @@
+int x=0;
 float y;
 float size = 65;
+int spacing = 5;
+int endLegs = 450;
 
 void setup()
 {
@@ -8,6 +11,9 @@ size (900, 700);
 void matahari(){
 fill(255,235,52);
   ellipse(450,50,80,80);
+  if(mousePressed){
+ fill(#FFE517);
+  }
 }
 
 void tanah(){
@@ -50,7 +56,12 @@ ellipse(1050,-150,90,45);
 void air(){
   noStroke();
   fill(#364EBF);
-  quad(350,200,550,200,550,430,350,430);
+  x=200;
+  spacing=mouseY/2;
+  while (x<=endLegs){
+  quad(350,200,550,200,550,x,350,x);
+  x=x+spacing+1;
+  }
 }
 
 void pohon(){
